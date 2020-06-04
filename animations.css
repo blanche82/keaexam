@@ -1,0 +1,402 @@
+
+
+.diagramAppear {
+	animation: fadein 1s ease-out forwards;
+	animation-delay: 0.4s;
+}
+
+.dotAppear {
+	animation: dotAppear 0.2s ease-out forwards;
+}
+
+.hidden {
+	display:none !important;
+}
+
+.under { display: none }
+.turnDissapearC { animation: turnDissapear 0.2s linear forwards }
+.turnAppearC { animation: turnAppear 0.2s linear forwards }
+
+@keyframes turnDissapear {
+	100% { transform: rotate3d(0, 1, 0, 90deg); }
+}
+						
+@keyframes turnAppear {
+	0% { transform: rotate3d(0, 1, 0, 90deg); }
+	100% { transform: rotate3d(0, 1, 0, 0deg); }
+}
+
+@keyframes enlargeLeft {
+	100% { transform: scale(1.05) translateX(-0.5rem) }
+}
+	
+@keyframes descaleLeft {
+	0% { transform: scale(1.05) translateX(-0.5rem) }
+	100% { transform: scale(1)}
+}
+
+@keyframes enlargeRight {
+	100% { transform: scale(1.05) translateX(0.5rem) }
+}
+	
+@keyframes descaleRight  {
+	0% { transform: scale(1.05) translateX(0.5rem) }
+	100% { transform: scale(1) }
+}
+
+@keyframes dotAppear {
+	0% { transform: scale(0.8); opacity: 0  }
+	90% { transform: scale(1.05); opacity: 1 }
+	100% { transform: scale(1.00); opacity: 1 }
+}
+
+.dotDelay { animation-delay: 3s }
+.fadeoutDot1 { animation: fadeoutDot1 0.8s ease-out forwards }
+.fadeoutDot2 { animation: fadeoutDot2 0.8s ease-out forwards }
+.fadeoutDot3 { animation: fadeoutDot3 0.8s ease-out forwards }
+.fadeoutDot4 { animation: fadeoutDot4 0.8s ease-out forwards }
+.fadeoutDot5 { animation: fadeoutDot5 0.8s ease-out forwards }
+.fadeoutDot6 { animation: fadeoutDot6 0.8s ease-out forwards }
+.fadeoutDot7 { animation: fadeoutDot7 0.8s ease-out forwards }
+.fadeoutDot8 { animation: fadeoutDot8 0.8s ease-out forwards }
+
+@keyframes fadeoutDot1 {
+	0% { opacity:1;	color: gray; transform: rotate(45deg); }
+	30% { border-color: var(--diamond_light_blue)}
+	60% {opacity:1;}
+	100% { opacity: 0;	transform: translateX(var(--logo_dot_size)) rotate(45deg) scale(0.8);  border-radius: 0rem }
+}
+@keyframes fadeoutDot2 {
+	0% { opacity:1;	color: gray; transform: rotate(45deg); }
+	30% { border-color: var(--diamond_blend_blue) }
+	60% {opacity:1;}
+	100% { opacity: 0;	transform: translateY(var(--logo_dot_size)) rotate(45deg) scale(0.8);   border-radius: 0rem }
+}
+@keyframes fadeoutDot3 {
+	0% { opacity:1;	color: gray; transform: rotate(45deg); }
+	30% { border-color: var(--diamond_dark_blue) }
+	60% {opacity:1;}
+	100% { opacity: 0;	transform: translateX(calc(-1 * var(--logo_dot_size))) rotate(45deg) scale(0.8);  border-radius: 0rem }
+}
+@keyframes fadeoutDot4 {
+	0% { opacity:1;	color: gray; transform: rotate(45deg); }
+	30% {  border-color: var(--diamond_blend_green) }
+	60% {opacity:1;}
+	100% { opacity: 0;	transform: translateY(calc(-1 * var(--logo_dot_size))) rotate(45deg) scale(0.8);  border-radius: 0rem }
+}
+@keyframes fadeoutDot5 {
+	0% { opacity:1;	color: gray; transform: rotate(45deg); }
+	30% { border-color: var(--diamond_dark_green) }
+	60% {opacity:1;}
+	100% { opacity: 0;	transform: translateX(calc(-1 * var(--logo_dot_size))) rotate(45deg) scale(0.8);  border-radius: 0rem }
+}
+@keyframes fadeoutDot6 {
+	0% { opacity:1;	color: gray; transform: rotate(45deg); }
+	30% {  border-color: var(--diamond_blend_green) }
+	60% {opacity:1;}
+	100% { opacity: 0;	transform: translateY(var(--logo_dot_size)) rotate(45deg) scale(0.8);   border-radius: 0rem }
+}
+@keyframes fadeoutDot7 {
+	0% { opacity:1;	color: gray; transform: rotate(45deg); }
+	30% { border-color: var(--diamond_light_green) }
+	60% {opacity:1;}
+	100% { opacity: 0;	transform: translateX(var(--logo_dot_size)) rotate(45deg) scale(0.8);   border-radius: 0rem }
+}
+@keyframes fadeoutDot8 {
+	0% { opacity:1;	color: gray; transform: rotate(45deg); }
+	30% {  border-color: var(--diamond_blend_blue) }
+	60% {opacity:1;}
+	100% { opacity: 0;	transform: translateY(calc(-1 * var(--logo_dot_size))) rotate(45deg) scale(0.8);   border-radius: 0rem }
+}
+
+
+
+
+
+.hexagon_text {
+	position: absolute;
+	color: white;
+	font-size: var(--hexagon_font_size);
+	text-align: center;
+	line-height: var(--hexagon_height_calc); 
+	width: var(--hexagon_fontbox_calc);
+}
+
+.hexagon {
+	position: absolute;
+	height: var(--hexagon_height_calc); 
+	width: var(--hexagon_width_calc);
+	background-color: transparent;
+	margin: 0 var(--hexagon_size_calc);
+	line-height: var(--hexagon_height_calc);
+}
+  
+.hexagon:before,
+.hexagon:after {
+	content: "";
+	position: absolute;
+	height: 0;
+	border-top: var(--hexagon_size) solid transparent;
+	border-bottom: var(--hexagon_size) solid transparent;
+}
+  
+.hexagon:before {
+	right: 100%;
+	border-right: var(--hexagon_size_calc) solid transparent;
+}
+  
+.hexagon:after {
+	left: 100%;
+	height: 0;
+	border-left: var(--hexagon_size_calc) solid transparent;
+}
+  
+.design_thinking {
+	margin: auto;
+	opacity: 0;
+	z-index:1000;
+	display:grid;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	grid-gap:0.1rem;
+	grid-template-columns: var(--hexagon_size_calc) var(--hexagon_width_calc) 
+	                       var(--hexagon_size_calc) var(--hexagon_width_calc) 
+						   var(--hexagon_size_calc) var(--hexagon_width_calc) 
+						   var(--hexagon_size_calc) var(--hexagon_width_calc) 
+						   var(--hexagon_size_calc) var(--hexagon_width_calc) 
+						   var(--hexagon_size_calc);
+	grid-template-rows: var(--hexagon_size) var(--hexagon_size) var(--hexagon_size) var(--hexagon_size) var(--hexagon_size);
+
+}
+
+.dt_sub {
+	position: relative;
+	z-index: 1000;
+}
+.dt_1_placement { grid-row: 1/ span 2; grid-column: 1/ span 3; }
+.dt_2_placement { grid-row: 2/ span 2; grid-column: 3/ span 3; }
+.dt_3_placement { grid-row: 1/ span 2; grid-column: 5/ span 3; }
+.dt_4_placement { grid-row: 2/ span 2; grid-column: 7/ span 3; }
+.dt_5_placement { grid-row: 3/ span 2; grid-column: 9/ span 3; }
+.dt_1_animation { animation: dt_1 1.4s ease-in-out forwards; animation-delay:1s }
+.dt_2_animation { animation: dt_2 1.4s ease-in-out forwards; animation-delay:1s }
+.dt_3_animation { animation: dt_3 1.4s ease-in-out forwards; animation-delay:1s }
+.dt_4_animation { animation: dt_4 1.4s ease-in-out forwards; animation-delay:1s }
+.dt_5_animation { animation: dt_5 1.4s ease-in-out forwards; animation-delay:1s }
+
+.dt_1 {	background-color: var(--dt_1_color) }
+.dt_1:before, .dt_1:after {	border-left-color: var(--dt_1_color); border-right-color: var(--dt_1_color) }
+
+.dt_2 {	background-color: var(--dt_2_color) }
+.dt_2:before, .dt_2:after { border-left-color: var(--dt_2_color); border-right-color: var(--dt_2_color) }
+
+.dt_3 {	background-color: var(--dt_3_color) }
+.dt_3:before, .dt_3:after {	border-left-color: var(--dt_3_color); border-right-color: var(--dt_3_color) }
+
+.dt_4 {	background-color: var(--dt_4_color) }
+.dt_4:before, .dt_4:after {	border-left-color: var(--dt_4_color); border-right-color: var(--dt_4_color) }
+
+.dt_5 {	background-color: var(--dt_5_color) }
+.dt_5:before, .dt_5:after {	border-left-color: var(--dt_5_color); border-right-color: var(--dt_5_color) }
+
+
+@keyframes dt_1 {
+	100% { 	z-index: 1000; transform: translateX(calc(-0.37 * var(--diamond_size))) translateY(calc(0.5 * var(--diamond_size))) } 
+}
+@keyframes dt_2 {
+	100% { 	z-index: 1000; transform: translateY(calc(0.165* var(--diamond_size))) } 
+}
+@keyframes dt_3 {
+	100% { 	z-index: 1000; transform: translateX(calc(0.6 * var(--diamond_size))) translateY(calc(.5 * var(--diamond_size))) } 
+}
+@keyframes dt_4 {
+	100% {	z-index: 1000; transform: translateX(calc(0.97 * var(--diamond_size))) translateY(calc(-0.2 * var(--diamond_size))) } 
+}
+@keyframes dt_5 {
+	100% { 	z-index: 1000; transform: translateX(calc(0.39* var(--diamond_size))) translateY(calc(.2 * var(--diamond_size))) } 
+}
+
+
+.menu_container{
+	height:100%;
+	width:100%;
+	margin-bottom:2rem
+
+}
+
+.diagram_menu {
+	margin-top: 1rem;
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap:2rem
+}
+
+.diagram_menu button{
+	border-radius: 3rem;
+	border: 1px solid gray;
+	outline: none;
+}
+
+.fadeToBackground {
+	animation: toBackground 1s ease-in forwards;
+	animation-delay: 0s;
+	opacity:1;
+}
+
+.fadeFromBackground {
+	animation: fromBackground 1s ease-in forwards;
+	opacity:0.5;
+}
+
+
+.fadeIn {
+	animation: fadein 1s ease-out forwards;
+	opacity: 0;
+}
+
+.fadeOut {
+	opacity: 1;
+	animation: fadeout 1s ease-out forwards !important;
+}
+
+
+@keyframes toBackground {
+	0% { opacity:1 } 
+	100% { opacity:0.5 } 
+}
+
+@keyframes fromBackground {
+	0% { opacity:0.5 } 
+	100% { opacity:1 } 
+}
+
+@keyframes fadein {
+	0% { opacity: 0 }
+	100% { opacity: 1 }
+}
+
+@keyframes fadeout {
+	0% { opacity: 1 }
+	100% { opacity: 0 }
+}
+
+.transparent {
+	opacity: 0;
+}
+
+.appearHeader {
+	animation: appearText 0.9s ease-out forwards
+}
+
+.appearContent {
+	animation: appearText 0.9s ease-out forwards;
+	animation-delay: 0.1s;
+}
+
+.appearRight {
+	animation: appearRight 0.9s ease-out forwards;
+}
+
+.appearLeft {
+	animation: appearLeft 0.9s ease-out forwards;
+	animation-delay: 0.1s;
+}
+
+.appearPopout {
+	animation: popout 0.3s ease-out forwards;
+}
+
+
+.animationDelay1 {animation-delay:0.1s;}
+.animationDelay2 {animation-delay:0.2s;}
+.animationDelay3 {animation-delay:0.3s;}
+.animationDelay4 {animation-delay:0.4s;}
+.animationDelay5 {animation-delay:0.5s;}
+.animationDelay6 {animation-delay:0.6s;}
+.animationDelay7 {animation-delay:0.7s;}
+.animationDelay8 {animation-delay:0.8s;}
+.animationDelay9 {animation-delay:0.9s;}
+.animationDelay10 {animation-delay:1s;}
+
+
+@keyframes popout {
+	0% { 
+		opacity:1;
+		transform: scale(0);
+	 }
+	97% {
+		opacity:1;
+		transform: scale(1.02);
+	}
+	100% {
+		opacity:1;
+		transform: scale(1);
+	}
+}
+
+@keyframes appearText {
+	0% { 
+		transform: translateY(9rem);
+		opacity:0
+	 }
+	100% {
+		transform: translateY(0rem);
+		opacity:1
+	}
+}
+
+@keyframes appearLeft {
+	0% { 
+		transform: translateX(-9rem);
+		opacity:0
+	 }
+	100% {
+		transform: translateX(0rem);
+		opacity:1
+	}
+}
+
+@keyframes appearRight {
+	0% { 
+		transform: translateX(9rem);
+		opacity:0
+	 }
+	100% {
+		transform: translateX(0rem);
+		opacity:1
+	}
+}
+
+.circlePopout {
+	animation: circlePopout 0.3s ease-out forwards;
+}
+
+
+.circlePopin {
+	animation: circlePopin 0.3s ease-in forwards;
+}
+
+@keyframes circlePopout {
+	0% { 
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(2);
+		z-index:1000;
+	}
+}
+
+@keyframes circlePopin {
+	0% { 
+		opacity: 1;
+		transform: scale(2);
+		z-index:1000;
+	 }
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
